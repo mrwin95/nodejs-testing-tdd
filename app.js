@@ -8,13 +8,11 @@ app.use(express.json());
 mongodb.connect();
 
 app.use('/todos', todoRoutes);
-
+app.use((err, req, res, next) => {
+  res.status(500).json({message: err.message});
+});
 // app.get('/', (req, res) => {
 //   res.send('test');
-// });
-
-// app.listen(3000, () => {
-//   console.log('Server is running at 3000');
 // });
 
 module.exports = app;
