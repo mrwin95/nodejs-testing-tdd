@@ -1,8 +1,11 @@
 const express = require('express');
 const app = express();
 const todoRoutes = require('./routes/todo.routes');
+const mongodb = require('./mongodb/mongodb.connect');
 
 app.use(express.json());
+
+mongodb.connect();
 
 app.use('/todos', todoRoutes);
 
