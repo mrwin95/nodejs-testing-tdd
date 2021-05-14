@@ -7,7 +7,7 @@ let endpointUrl = '/todos/';
 
 describe(endpointUrl, () => {
 
-  it('GET' + endpointUrl, async() => {
+  test('GET' + endpointUrl, async () => {
     const response = await request(app)
     .get(endpointUrl);
     
